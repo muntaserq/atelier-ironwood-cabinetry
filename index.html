@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Ironwood | Bespoke Architectural Cabinetry & Millwork</title>
+  <meta name="description" content="Heirloom custom kitchens, solid walnut and white oak cabinetry, and architectural built-in millwork crafted by master woodworkers with a lifetime joinery guarantee.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            timber: {
+              800: '#2c1e18',
+              900: '#1e1410',
+              950: '#140c09',
+            },
+            sand: '#FAF8F5',
+            brass: {
+              400: '#e5be66',
+              500: '#d4af37',
+              600: '#aa8c2c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #1e1410;
+      border: 2px solid #d4af37;
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#FAF8F5] text-stone-800 font-sans antialiased selection:bg-stone-900 selection:text-brass-400">
+
+  <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
+  <div class="bg-timber-950 text-stone-300 text-xs py-2 px-4 border-b border-timber-900/60">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2 justify-center">
+        <span class="inline-block w-2 h-2 rounded-full bg-brass-400 animate-pulse"></span>
+        <span>Accepting Commissions for Q2 & Q3 2026 • Handcrafted In San Francisco Workshop</span>
+      </div>
+      <div class="flex items-center gap-6 font-medium text-stone-300">
+        <span class="flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5 text-brass-400"></i> Lifetime Joinery Guarantee</span>
+        <a href="tel:4158229040" class="hover:text-white transition-colors flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i> (415) 822-9040</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== STICKY NAVIGATION ==================== -->
+  <header class="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-timber-950 flex items-center justify-center text-brass-400 shadow-sm group-hover:bg-timber-900 transition-colors">
+          <i data-lucide="hammer" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="font-serif text-2xl tracking-wide font-bold text-stone-950 block leading-none">ATELIER IRONWOOD</span>
+          <span class="text-[10px] tracking-[0.25em] uppercase text-stone-500 font-semibold mt-1 block">Bespoke Architectural Cabinetry</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-700">
+        <a href="#specialties" class="hover:text-stone-950 transition-colors">Commissions</a>
+        <a href="#configurator" class="hover:text-stone-950 transition-colors flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-brass-500"></span> Studio Configurator
+        </a>
+        <a href="#anatomy" class="hover:text-stone-950 transition-colors">Joinery Anatomy</a>
+        <a href="#portfolio" class="hover:text-stone-950 transition-colors">Completed Residences</a>
+        <a href="#process" class="hover:text-stone-950 transition-colors">Craftsmanship</a>
+        <a href="#faq" class="hover:text-stone-950 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-full bg-timber-950 hover:bg-timber-900 text-stone-50 text-sm font-medium shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+          <span>Book Showroom Visit</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-brass-400"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle menu" class="md:hidden p-2 text-stone-800 focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-stone-200 px-6 py-5 shadow-xl transition-all">
+      <div class="flex flex-col gap-4 text-base font-medium text-stone-800">
+        <a href="#specialties" class="mobile-link py-2 border-b border-stone-100">Commissions</a>
+        <a href="#configurator" class="mobile-link py-2 border-b border-stone-100 text-amber-800 font-semibold flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brass-500"></span> Studio Configurator & Pricing
+        </a>
+        <a href="#anatomy" class="mobile-link py-2 border-b border-stone-100">Joinery Anatomy</a>
+        <a href="#portfolio" class="mobile-link py-2 border-b border-stone-100">Completed Residences</a>
+        <a href="#process" class="mobile-link py-2 border-b border-stone-100">Craftsmanship</a>
+        <a href="#faq" class="mobile-link py-2 border-b border-stone-100">FAQ</a>
+        <button onclick="openBookingModal(); toggleMobileMenu();" class="mt-2 w-full py-3 rounded-xl bg-timber-950 text-white font-medium flex items-center justify-center gap-2">
+          <span>Book Showroom Visit</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-brass-400"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Copy & Actions -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-900 text-xs font-semibold tracking-wide">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brass-600"></i>
+            <span>Artisan Solid Hardwood Cabinetry & Architectural Millwork</span>
+          </div>
+
+          <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-stone-950 leading-[1.08]">
+            Heirloom cabinetry built for generations of <span class="italic font-normal text-amber-800">gatherings</span>.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-stone-600 font-light leading-relaxed max-w-2xl">
+            Bookmatched American walnut, quarter-sawn white oak, and precision mortise-and-tenon construction. We craft museum-grade kitchens and millwork tailored to your architect’s vision.
+          </p>
+
+          <!-- Dual CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <button onclick="openBookingModal()" class="px-8 py-4 rounded-full bg-timber-950 hover:bg-timber-900 text-white font-medium shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-base">
+              <span>Book Private Workshop Tour</span>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-brass-400"></i>
+            </button>
+            <a href="#configurator" class="px-7 py-4 rounded-full bg-white hover:bg-stone-50 border border-stone-300 text-stone-800 font-medium transition-all flex items-center justify-center gap-2 text-base hover:border-stone-400">
+              <i data-lucide="sliders" class="w-4 h-4 text-amber-800"></i>
+              <span>Launch Studio Configurator</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Bar -->
+          <div class="pt-8 border-t border-stone-200/80 grid grid-cols-3 gap-6">
+            <div>
+              <div class="text-3xl font-serif font-bold text-stone-950">100%</div>
+              <div class="text-xs text-stone-500 font-medium uppercase tracking-wider mt-1">Solid Hardwoods</div>
+            </div>
+            <div>
+              <div class="text-3xl font-serif font-bold text-stone-950">Lifetime</div>
+              <div class="text-xs text-stone-500 font-medium uppercase tracking-wider mt-1">Joinery Warranty</div>
+            </div>
+            <div>
+              <div class="text-3xl font-serif font-bold text-stone-950">0.02 mm</div>
+              <div class="text-xs text-stone-500 font-medium uppercase tracking-wider mt-1">CNC Precision</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual Hero Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="absolute -inset-4 bg-gradient-to-tr from-amber-200/30 via-stone-200/50 to-amber-100/30 rounded-3xl blur-2xl -z-10"></div>
+            
+            <div class="relative bg-white rounded-3xl p-3 shadow-2xl border border-stone-200/80 overflow-hidden">
+              <div class="relative h-[440px] sm:h-[500px] rounded-2xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80" alt="Custom Walnut Kitchen Cabinets" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                
+                <div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-white/95 backdrop-blur-md border border-white/60 shadow-lg">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="text-xs uppercase tracking-wider text-amber-800 font-bold block">The Sea Cliff Commission</span>
+                      <h4 class="font-serif font-bold text-lg text-stone-950">Continuous Grain Black Walnut</h4>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 text-xs font-semibold">Blum Movento</span>
+                  </div>
+                  <p class="text-xs text-stone-600 mt-2">Bookmatched walnut drawer fronts with unlacquered aged brass hardware and hidden pantry entry.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Floating Badge -->
+            <div class="absolute -bottom-5 -right-5 bg-white rounded-2xl p-4 shadow-xl border border-stone-100 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-timber-950 flex items-center justify-center text-brass-400 font-bold">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-stone-900">Guild Certified</div>
+                <div class="text-[11px] text-stone-500">Zero Particle Board • Solid Maple Dovetails</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRADE CREDENTIALS & PRESS ==================== -->
+  <section class="py-10 bg-white border-y border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-xs uppercase tracking-[0.25em] font-semibold text-stone-400 mb-8">
+        Partnering with California's Leading AIA Architects & Interior Designers
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-75 grayscale hover:grayscale-0 transition-all">
+        <span class="font-serif text-2xl font-bold tracking-wider text-stone-800">AIA PARTNER</span>
+        <span class="font-serif text-2xl tracking-widest text-stone-900 font-bold">ARCHITECTURAL DIGEST</span>
+        <span class="font-serif text-2xl italic tracking-wider text-stone-800">ELLE DÉCOR</span>
+        <span class="font-sans text-xl font-black tracking-tight text-stone-900">BLUM® PREFERRED GUILD</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CORE SERVICES / BENTO GRID ==================== -->
+  <section id="specialties" class="py-24 bg-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-semibold uppercase tracking-wider">
+          Architectural Scope
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-stone-950">
+          Tailored spaces milled to perfection.
+        </h2>
+        <p class="text-stone-600 text-lg font-light">
+          Unlike modular box stores, every cabinet box, face frame, and integrated paneled appliance front is hand-assembled in our local studio to fit your home's unique dimensions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Bento 1: Large Kitchen Card -->
+        <div class="md:col-span-2 bg-white rounded-3xl p-8 sm:p-10 border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-timber-950 text-brass-400 flex items-center justify-center">
+              <i data-lucide="utensils" class="w-6 h-6"></i>
+            </div>
+            <div class="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-semibold">Signature Craft</div>
+            <h3 class="font-serif text-3xl font-bold text-stone-950">Full Architectural Chef's Kitchens</h3>
+            <p class="text-stone-600 leading-relaxed max-w-xl">
+              From secret motorized spice larders to continuous horizontal grain matching across 16-foot island banks. Built with full inset cabinetry, soft-close Blum Movento glides, and bespoke marble integration.
+            </p>
+          </div>
+          <div class="mt-8 rounded-2xl overflow-hidden h-64 relative">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Luxury Custom Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-4 text-white text-xs font-medium bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">Flush Sub-Zero & Wolf Seamless Integration</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Libraries & Built-Ins -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-950 text-amber-300 flex items-center justify-center">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <div class="inline-block px-3 py-1 rounded-full bg-stone-100 text-stone-800 text-xs font-semibold">Executive Spaces</div>
+            <h3 class="font-serif text-2xl font-bold text-stone-950">Architectural Libraries & Media Studies</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Floor-to-ceiling quarter-sawn white oak shelving, integrated brass library ladders, fluted acoustic paneling, and discreet dry bars.
+            </p>
+          </div>
+          <div class="mt-8 rounded-2xl overflow-hidden h-48 relative">
+            <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" alt="Custom Library Built-in" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+
+        <!-- Bento 3: Walk-In Dressing Suites -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-stone-900 text-stone-200 flex items-center justify-center">
+              <i data-lucide="shirt" class="w-6 h-6 text-brass-400"></i>
+            </div>
+            <div class="inline-block px-3 py-1 rounded-full bg-stone-100 text-stone-800 text-xs font-semibold">Private Suites</div>
+            <h3 class="font-serif text-2xl font-bold text-stone-950">Walk-In Dressing Rooms & Closets</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Italian glass-front wardrobes, Italian velvet watch and jewelry inserts, integrated 2700K warm LED channels, and island shoe showcases.
+            </p>
+          </div>
+          <div class="mt-8 rounded-2xl overflow-hidden h-48 relative">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Custom Wardrobe Dressing Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+
+        <!-- Bento 4: Butler's Pantries & Wine Cellars -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-900 text-amber-200 flex items-center justify-center">
+              <i data-lucide="wine" class="w-6 h-6 text-brass-400"></i>
+            </div>
+            <div class="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-semibold">Entertaining</div>
+            <h3 class="font-serif text-2xl font-bold text-stone-950">Butler's Pantries & Wine Displays</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Climate-controlled acrylic and walnut wine racking, reeded pocket doors, secondary dishwashing stations, and prep bars.
+            </p>
+          </div>
+          <div class="mt-8 rounded-2xl overflow-hidden h-48 relative">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Wine and Butler Pantry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+
+        <!-- Bento 5: Bespoke Vanities -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-timber-900 text-brass-400 flex items-center justify-center">
+              <i data-lucide="sparkle" class="w-6 h-6"></i>
+            </div>
+            <div class="inline-block px-3 py-1 rounded-full bg-stone-100 text-stone-800 text-xs font-semibold">Primary Bathrooms</div>
+            <h3 class="font-serif text-2xl font-bold text-stone-950">Floating Hardwood Bath Vanities</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Moisture-sealed marine polyurethane finishes, U-shaped plumbing drawer cutouts, and mitred quartzite sink transitions.
+            </p>
+          </div>
+          <div class="mt-8 rounded-2xl overflow-hidden h-48 relative">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Custom Bathroom Vanity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE CABINET ANATOMY EXPLORER ==================== -->
+  <section id="anatomy" class="py-24 bg-timber-950 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs uppercase tracking-[0.25em] text-brass-400 font-bold">Heirloom Standards</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold">The anatomy of lifetime joinery.</h2>
+        <p class="text-stone-400 font-light">
+          Click the craftsmanship hotspots below to inspect the engineering hidden inside every Atelier Ironwood box.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto bg-timber-900/80 rounded-3xl border border-timber-800 p-6 sm:p-10 shadow-2xl backdrop-blur-md">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Visual Hotspot Graphic Area (Left) -->
+          <div class="lg:col-span-7 relative bg-stone-900 rounded-2xl overflow-hidden border border-white/10 h-80 sm:h-96 flex items-center justify-center p-6">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80" alt="Cabinet Construction" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-timber-950/40"></div>
+
+            <!-- Hotspot 1 -->
+            <button onclick="showAnatomy('dovetail', this)" class="anatomy-dot absolute top-1/4 left-1/3 w-8 h-8 rounded-full bg-brass-500 text-stone-950 font-bold text-xs flex items-center justify-center shadow-lg ring-4 ring-brass-400/30 hover:scale-110 transition-all">
+              1
+            </button>
+            
+            <!-- Hotspot 2 -->
+            <button onclick="showAnatomy('runners', this)" class="anatomy-dot absolute bottom-1/3 left-1/2 w-8 h-8 rounded-full bg-white text-stone-950 font-bold text-xs flex items-center justify-center shadow-lg ring-4 ring-white/30 hover:scale-110 transition-all">
+              2
+            </button>
+
+            <!-- Hotspot 3 -->
+            <button onclick="showAnatomy('frames', this)" class="anatomy-dot absolute top-1/2 right-1/4 w-8 h-8 rounded-full bg-white text-stone-950 font-bold text-xs flex items-center justify-center shadow-lg ring-4 ring-white/30 hover:scale-110 transition-all">
+              3
+            </button>
+
+            <!-- Hotspot 4 -->
+            <button onclick="showAnatomy('lighting', this)" class="anatomy-dot absolute top-1/6 right-1/3 w-8 h-8 rounded-full bg-white text-stone-950 font-bold text-xs flex items-center justify-center shadow-lg ring-4 ring-white/30 hover:scale-110 transition-all">
+              4
+            </button>
+          </div>
+
+          <!-- Dynamic Hotspot Explainer Panel (Right) -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-6 rounded-2xl bg-stone-950/80 border border-stone-800">
+              <span id="anatomyNumber" class="text-xs uppercase tracking-widest text-brass-400 font-bold block mb-1">Feature 01 of 04</span>
+              <h3 id="anatomyTitle" class="font-serif text-2xl font-bold text-white mb-2">English Dovetail Solid Maple Boxes</h3>
+              <p id="anatomyDesc" class="text-sm text-stone-300 leading-relaxed">
+                5/8" solid North American sugar maple drawer boxes joined with hand-fitted English dovetails. Finished with furniture-grade catalyzed clear coat that never splinters or catches linens.
+              </p>
+              <div id="anatomySpec" class="mt-4 pt-4 border-t border-stone-800 text-xs text-brass-300 font-semibold flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4"></i> Lifetime Structural Joint Guarantee
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button onclick="showAnatomy('dovetail', document.querySelectorAll('.anatomy-dot')[0])" class="px-3 py-2 rounded-lg bg-timber-800 text-xs font-semibold hover:bg-timber-700">01 Dovetails</button>
+              <button onclick="showAnatomy('runners', document.querySelectorAll('.anatomy-dot')[1])" class="px-3 py-2 rounded-lg bg-timber-800 text-xs font-semibold hover:bg-timber-700">02 Blum Glides</button>
+              <button onclick="showAnatomy('frames', document.querySelectorAll('.anatomy-dot')[2])" class="px-3 py-2 rounded-lg bg-timber-800 text-xs font-semibold hover:bg-timber-700">03 Mortise Frames</button>
+              <button onclick="showAnatomy('lighting', document.querySelectorAll('.anatomy-dot')[3])" class="px-3 py-2 rounded-lg bg-timber-800 text-xs font-semibold hover:bg-timber-700">04 LED Channels</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STUDIO CONFIGURATOR & PRICING ESTIMATOR ==================== -->
+  <section id="configurator" class="py-24 bg-[#F2EFE9] border-y border-stone-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-timber-950 text-brass-400 text-xs font-bold tracking-wider uppercase">
+          <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Interactive Cabinet Studio
+        </span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-stone-950">
+          Build your custom millwork specification.
+        </h2>
+        <p class="text-stone-600 text-lg font-light">
+          Configure linear footage, premium wood species, and door profiles to generate a transparent ballpark investment projection.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl border border-stone-200 p-8 sm:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Configurator Controls (Left) -->
+          <div class="lg:col-span-7 space-y-8">
+            
+            <!-- Room / Space -->
+            <div>
+              <label class="block text-sm font-bold uppercase tracking-wider text-stone-500 mb-3">
+                1. Select Commission Space
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <button type="button" onclick="setRoomType('kitchen', 1400, this)" class="room-btn px-3 py-3 rounded-xl border-2 border-stone-950 bg-stone-100 text-stone-950 font-semibold text-center text-sm transition-all">
+                  Full Kitchen & Island
+                </button>
+                <button type="button" onclick="setRoomType('wardrobe', 1150, this)" class="room-btn px-3 py-3 rounded-xl border border-stone-200 bg-white text-stone-700 font-medium text-center text-sm transition-all hover:border-stone-400">
+                  Dressing Suite
+                </button>
+                <button type="button" onclick="setRoomType('library', 950, this)" class="room-btn px-3 py-3 rounded-xl border border-stone-200 bg-white text-stone-700 font-medium text-center text-sm transition-all hover:border-stone-400">
+                  Library Built-Ins
+                </button>
+              </div>
+            </div>
+
+            <!-- Linear Footage Slider -->
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <label class="text-sm font-bold uppercase tracking-wider text-stone-500">
+                  2. Approximate Cabinet Run Length
+                </label>
+                <span id="footageDisplay" class="font-serif text-xl font-bold text-stone-950">28 Linear Feet</span>
+              </div>
+              <input id="footageSlider" type="range" min="10" max="65" step="1" value="28" oninput="updateFootage(this.value)" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-stone-400 mt-2">
+                <span>10 ft (Pantry/Bar)</span>
+                <span>30 ft (Large Kitchen)</span>
+                <span>65+ ft (Estate Suite)</span>
+              </div>
+            </div>
+
+            <!-- Wood Species Selection -->
+            <div>
+              <label class="block text-sm font-bold uppercase tracking-wider text-stone-500 mb-3">
+                3. Primary Hardwood Species
+              </label>
+              <div class="space-y-2">
+                
+                <label class="flex items-center justify-between p-3.5 rounded-xl border border-stone-200 hover:bg-stone-50 cursor-pointer">
+                  <div class="flex items-center gap-3">
+                    <input type="radio" name="woodSpecies" value="1.0" checked onchange="updateWood(1.0, 'Quarter-Sawn White Oak')" class="w-4 h-4 text-timber-900 focus:ring-timber-800">
+                    <div>
+                      <div class="font-semibold text-sm text-stone-900">Quarter-Sawn White Oak (Cerused or Natural)</div>
+                      <div class="text-xs text-stone-500">Dimensionally stable ray fleck grain, ultra-durable matte polyurethane seal</div>
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold text-stone-600">Standard</span>
+                </label>
+
+                <label class="flex items-center justify-between p-3.5 rounded-xl border border-stone-200 hover:bg-stone-50 cursor-pointer">
+                  <div class="flex items-center gap-3">
+                    <input type="radio" name="woodSpecies" value="1.2" onchange="updateWood(1.2, 'American Black Walnut')" class="w-4 h-4 text-timber-900 focus:ring-timber-800">
+                    <div>
+                      <div class="font-semibold text-sm text-stone-900">American Black Walnut (Bookmatched Flitch)</div>
+                      <div class="text-xs text-stone-500">Continuous horizontal sapwood-free grain, velvety dark espresso luster</div>
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold text-amber-800">+20%</span>
+                </label>
+
+                <label class="flex items-center justify-between p-3.5 rounded-xl border border-stone-200 hover:bg-stone-50 cursor-pointer">
+                  <div class="flex items-center gap-3">
+                    <input type="radio" name="woodSpecies" value="1.1" onchange="updateWood(1.1, 'Hard Sugar Maple')" class="w-4 h-4 text-timber-900 focus:ring-timber-800">
+                    <div>
+                      <div class="font-semibold text-sm text-stone-900">Hard Sugar Maple (Baked Italian Enamel)</div>
+                      <div class="text-xs text-stone-500">Mirror-smooth painted lacquer finish in custom Benjamin Moore or F&B shades</div>
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold text-amber-800">+10%</span>
+                </label>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Output Card (Right) -->
+          <div class="lg:col-span-5 bg-timber-950 text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-timber-900">
+            <div>
+              <div class="flex items-center justify-between border-b border-timber-800 pb-4 mb-6">
+                <span class="text-xs uppercase tracking-widest text-brass-400 font-bold">Estimated Commission</span>
+                <span class="text-xs text-stone-400">100% Solid Wood</span>
+              </div>
+
+              <!-- Price Readout -->
+              <div class="space-y-1">
+                <div class="text-stone-400 text-xs">Bespoke Fabrication Projection:</div>
+                <div id="configPriceDisplay" class="font-serif text-4xl sm:text-5xl font-bold text-brass-300">
+                  $39,200 – $44,500
+                </div>
+                <div class="text-[11px] text-stone-400 mt-1">Includes 3D CAD blueprints, full millwork, dovetail boxes & white-glove install.</div>
+              </div>
+
+              <!-- Metrics -->
+              <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-timber-800">
+                <div>
+                  <div class="text-xs text-stone-400">Workshop Build Time:</div>
+                  <div class="text-lg font-bold text-white mt-0.5">6 – 8 Weeks</div>
+                </div>
+                <div>
+                  <div class="text-xs text-stone-400">Hardware Glides:</div>
+                  <div class="text-lg font-bold text-brass-400 mt-0.5">Blum® Movento</div>
+                </div>
+              </div>
+
+              <div class="mt-6 p-3 rounded-xl bg-timber-900 border border-timber-800 text-xs text-stone-300 flex items-start gap-2.5">
+                <i data-lucide="shield-check" class="w-4 h-4 text-brass-400 shrink-0 mt-0.5"></i>
+                <span>Every joint is backed by our Lifetime Transferable Structural Warranty.</span>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-8">
+              <button onclick="openBookingModal()" class="w-full py-4 rounded-xl bg-brass-500 hover:bg-brass-400 text-stone-950 font-bold text-sm tracking-wide uppercase transition-all shadow-lg flex items-center justify-center gap-2">
+                <span>Reserve Private Workshop Tour</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <div class="text-center text-[11px] text-stone-400 mt-2">Touch real wood flitches & test silent soft-close glides in our showroom</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SELECTED RESIDENCES PORTFOLIO ==================== -->
+  <section id="portfolio" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-amber-800 font-bold block mb-2">Commissions</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-stone-950">Recent Installations.</h2>
+        </div>
+        <p class="text-stone-500 text-base max-w-md font-light">
+          Installed with laser levels to achieve seamless zero-gap reveals against irregular plaster and stonework.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1 -->
+        <div class="bg-[#FAF8F5] rounded-3xl overflow-hidden border border-stone-200/80 hover:shadow-xl transition-all group">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Presidio Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-stone-900">Presidio Heights</span>
+          </div>
+          <div class="p-8 space-y-4">
+            <div class="flex items-center justify-between text-xs text-stone-500 font-semibold uppercase tracking-wider">
+              <span>Chef's Kitchen & Larder</span>
+              <span class="text-amber-800">Calacatta Viola Stone</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-stone-900">Continuous Grain Black Walnut</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Milled from three sequentially sliced logs to keep wood grain unbroken across 18 drawer fronts. Integrated Gaggenau wine refrigeration.
+            </p>
+            <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs font-semibold text-stone-900">
+              <span>Scope: 36 Linear Ft</span>
+              <span>Hardware: Armac Martin Brass</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-[#FAF8F5] rounded-3xl overflow-hidden border border-stone-200/80 hover:shadow-xl transition-all group">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" alt="Palo Alto Library" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-stone-900">Palo Alto Villa</span>
+          </div>
+          <div class="p-8 space-y-4">
+            <div class="flex items-center justify-between text-xs text-stone-500 font-semibold uppercase tracking-wider">
+              <span>Executive Library</span>
+              <span class="text-amber-800">22-Ft Rolling Ladder</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-stone-900">Cerused White Oak Architectural Study</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Wire-brushed quarter-sawn white oak millwork with concealed magnetic hidden doorway opening to a private temperature-controlled wine room.
+            </p>
+            <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs font-semibold text-stone-900">
+              <span>Scope: 28 Linear Ft</span>
+              <span>Integrated Acoustics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-[#FAF8F5] rounded-3xl overflow-hidden border border-stone-200/80 hover:shadow-xl transition-all group">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Belvedere Dressing Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-stone-900">Belvedere Island</span>
+          </div>
+          <div class="p-8 space-y-4">
+            <div class="flex items-center justify-between text-xs text-stone-500 font-semibold uppercase tracking-wider">
+              <span>Primary Dressing Suite</span>
+              <span class="text-amber-800">Warm 2700K LED</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-stone-900">Reeded Oak & Smoked Glass Wardrobes</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Custom reeded vertical profile cabinet doors with Italian bronze tinted glass, soft-leather valet pullouts, and velvet jewelry drawer partitions.
+            </p>
+            <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs font-semibold text-stone-900">
+              <span>Scope: 44 Linear Ft</span>
+              <span>Italian Hardware</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE 4-STEP CRAFTSMANSHIP PROCESS ==================== -->
+  <section id="process" class="py-24 bg-[#FAF8F5] border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-xs uppercase tracking-[0.25em] text-amber-800 font-bold">From Forest to Finish</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-stone-950">How your millwork is born.</h2>
+        <p class="text-stone-600 font-light">
+          A disciplined four-phase guild workflow guaranteeing zero unexpected delays or misalignment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm space-y-3">
+          <div class="text-4xl font-serif font-bold text-amber-800/40">01</div>
+          <h3 class="font-bold text-lg text-stone-900">3D Laser Scanning</h3>
+          <p class="text-stone-600 text-xs leading-relaxed">
+            We map wall plumbness, floor levels, and plumbing penetrations with sub-millimeter Leica laser scanners before drawing CAD shop blueprints.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm space-y-3">
+          <div class="text-4xl font-serif font-bold text-amber-800/40">02</div>
+          <h3 class="font-bold text-lg text-stone-900">Lumber Selection</h3>
+          <p class="text-stone-600 text-xs leading-relaxed">
+            You are invited to our lumber yard to hand-select walnut or white oak flitches to approve grain characteristics, tone, and figure.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm space-y-3">
+          <div class="text-4xl font-serif font-bold text-amber-800/40">03</div>
+          <h3 class="font-bold text-lg text-stone-900">Workshop Joinery</h3>
+          <p class="text-stone-600 text-xs leading-relaxed">
+            Dovetailing, tenoning, and edge-banding executed in our local workshop. Entire kitchens are pre-assembled on our level shop floor to test fit.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm space-y-3">
+          <div class="text-4xl font-serif font-bold text-amber-800/40">04</div>
+          <h3 class="font-bold text-lg text-stone-900">White-Glove Install</h3>
+          <p class="text-stone-600 text-xs leading-relaxed">
+            Installed strictly by our own full-time artisans—never subcontracted out. Laser scribed to walls with museum-level flush reveals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section id="faq" class="py-24 bg-white border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 space-y-3">
+        <span class="text-xs uppercase tracking-[0.25em] text-amber-800 font-bold">Confidence In Investment</span>
+        <h2 class="font-serif text-4xl font-bold text-stone-950">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="faq-item bg-[#FAF8F5] rounded-2xl border border-stone-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition-colors">
+            <span>What is the difference between custom cabinets and semi-custom or modular boxes?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-stone-600 text-sm leading-relaxed border-t border-stone-200/60 pt-4">
+            Semi-custom cabinets are pre-manufactured in 3-inch increments, using particleboard or MDF cores and filling leftover gaps with ugly filler strips. Atelier Ironwood cabinets are built completely from scratch in 1/16th-inch tolerances with 100% solid hardwood face frames and 3/4" furniture-grade plywood or solid core boxes. Zero filler strips; total architectural integration.
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#FAF8F5] rounded-2xl border border-stone-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition-colors">
+            <span>What are your typical production lead times from approved blueprints?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-stone-600 text-sm leading-relaxed border-t border-stone-200/60 pt-4">
+            Once architectural CAD shop drawings and physical wood stain samples are approved, fabrication takes 6 to 9 weeks in our local studio. Because we build locally in California, you never face months of ocean freight delays or lost container shipments.
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#FAF8F5] rounded-2xl border border-stone-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition-colors">
+            <span>How do you guarantee that solid wood doors won't warp or expand over time?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-stone-600 text-sm leading-relaxed border-t border-stone-200/60 pt-4">
+            We exclusively use kiln-dried hardwoods with strict 6–8% moisture content and acclimatize all raw lumber inside our climate-controlled workshop for 3 weeks prior to milling. For wide slab doors, we integrate internal steel stiffener bars and expansion slots that allow natural seasonal micro-breathing without twisting.
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#FAF8F5] rounded-2xl border border-stone-200 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-stone-900 flex justify-between items-center hover:bg-stone-50 transition-colors">
+            <span>Do you coordinate with our interior designer, general contractor, and appliance dealers?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-stone-600 text-sm leading-relaxed border-t border-stone-200/60 pt-4">
+            Yes. We request appliance specification sheets (Sub-Zero, Wolf, Miele, True, Gaggenau) directly and coordinate with your GC's electrical and plumbing rough-in teams. We ensure panel dimensions, reveal gaps, and toe-kick duct vents align without hiccups.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LEAD CAPTURE CTA BANNER ==================== -->
+  <section class="py-24 bg-timber-950 text-white text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <span class="inline-block px-3.5 py-1 rounded-full bg-timber-900 border border-timber-800 text-brass-400 text-xs font-semibold uppercase tracking-widest">
+        Private Showroom Consultation
+      </span>
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold leading-tight">
+        Bring your architectural blueprints to life.
+      </h2>
+      <p class="text-stone-300 text-lg max-w-xl mx-auto font-light">
+        Schedule a private consultation in our San Francisco design studio. Touch actual timber specimens, examine soft-close drawer assemblies, and review your floor plans with our master joiner.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+        <button onclick="openBookingModal()" class="px-8 py-4 rounded-full bg-brass-500 hover:bg-brass-400 text-stone-950 font-bold text-base transition-all shadow-xl flex items-center justify-center gap-2">
+          <span>Schedule Private Studio Tour</span>
+          <i data-lucide="calendar" class="w-5 h-5"></i>
+        </button>
+        <a href="tel:4158229040" class="px-8 py-4 rounded-full bg-timber-900 hover:bg-timber-800 border border-timber-700 text-stone-200 font-medium text-base transition-all flex items-center justify-center gap-2">
+          <i data-lucide="phone" class="w-5 h-5 text-brass-400"></i>
+          <span>Direct: (415) 822-9040</span>
+        </a>
+      </div>
+      <p class="text-xs text-stone-400 pt-2">Licensed C-6 Cabinet & Millwork Contractor #1093821 • Fully Bonded</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-stone-950 text-stone-400 text-sm py-16 border-t border-stone-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-timber-950 flex items-center justify-center text-brass-400">
+            <i data-lucide="hammer" class="w-4 h-4"></i>
+          </div>
+          <span class="font-serif text-xl tracking-wider font-bold text-white">ATELIER IRONWOOD</span>
+        </div>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          Architectural custom cabinetry, solid hardwood kitchens, and tailored millwork crafted for California's finest private residences.
+        </p>
+        <div class="text-xs text-stone-500">
+          Studio & Mill: 2240 Jerrold Ave, Studio 4<br>San Francisco, CA 94124
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Millwork</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="#specialties" class="hover:text-white transition-colors">Bespoke Chef's Kitchens</a></li>
+          <li><a href="#specialties" class="hover:text-white transition-colors">Architectural Libraries</a></li>
+          <li><a href="#specialties" class="hover:text-white transition-colors">Walk-In Dressing Suites</a></li>
+          <li><a href="#specialties" class="hover:text-white transition-colors">Butler's Pantries & Wine Rooms</a></li>
+          <li><a href="#specialties" class="hover:text-white transition-colors">Floating Hardwood Vanities</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Studio Navigation</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="#configurator" class="hover:text-white transition-colors">Cabinet Configurator</a></li>
+          <li><a href="#anatomy" class="hover:text-white transition-colors">Joinery Anatomy</a></li>
+          <li><a href="#portfolio" class="hover:text-white transition-colors">Completed Residences</a></li>
+          <li><a href="#process" class="hover:text-white transition-colors">Guild Crafting Workflow</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">Architectural FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Studio Concierge</h4>
+        <p class="text-xs text-stone-400">Speak directly with our Master Joiner:</p>
+        <div class="space-y-1 text-xs">
+          <div class="text-white font-medium">commissions@atelierironwood.com</div>
+          <div class="text-brass-400 font-bold">(415) 822-9040</div>
+        </div>
+        <div class="pt-2 flex gap-4 text-stone-400">
+          <span class="hover:text-white cursor-pointer"><i data-lucide="instagram" class="w-4 h-4"></i></span>
+          <span class="hover:text-white cursor-pointer"><i data-lucide="linkedin" class="w-4 h-4"></i></span>
+          <span class="hover:text-white cursor-pointer"><i data-lucide="facebook" class="w-4 h-4"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-stone-900 text-xs text-stone-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>&copy; 2026 Atelier Ironwood Cabinetry Inc. All rights reserved.</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-stone-400">Privacy Policy</a>
+        <a href="#" class="hover:text-stone-400">Lifetime Warranty Terms</a>
+        <a href="#" class="hover:text-stone-400">CSLB Lic #1093821</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SHOWROOM BOOKING MODAL ==================== -->
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-stone-200 relative overflow-hidden">
+      <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-stone-400 hover:text-stone-700">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="space-y-2 mb-6">
+        <span class="text-xs uppercase tracking-wider font-bold text-amber-800">Private Design Session</span>
+        <h3 class="font-serif text-2xl font-bold text-stone-900">Book Workshop & Showroom Visit</h3>
+        <p class="text-xs text-stone-500">Touch wood species flitches and review your architectural plans with our Master Joiner.</p>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Your Full Name</label>
+          <input type="text" required placeholder="e.g. Julian & Vivienne Bennett" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-amber-800 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Email Address</label>
+            <input type="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-amber-800 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Phone</label>
+            <input type="tel" required placeholder="(415) 000-0000" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-amber-800 focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Intended Space</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-amber-800 focus:outline-none bg-white">
+            <option>Architectural Chef's Kitchen</option>
+            <option>Master Dressing Suite & Closets</option>
+            <option>Library & Built-In Media Millwork</option>
+            <option>Full Home Custom Cabinetry Commission</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Estimated Budget Range</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:ring-2 focus:ring-amber-800 focus:outline-none bg-white">
+            <option>$35,000 – $60,000</option>
+            <option selected>$60,000 – $100,000</option>
+            <option>$100,000 – $175,000</option>
+            <option>$175,000+ (Full Residence Millwork Commission)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-xl bg-timber-950 hover:bg-timber-900 text-white font-bold text-sm tracking-wider uppercase transition-all shadow-lg flex items-center justify-center gap-2 mt-4">
+          <span>Confirm Showroom Appointment</span>
+          <i data-lucide="check-circle" class="w-4 h-4 text-brass-400"></i>
+        </button>
+      </form>
+
+      <!-- Confirmation Toast -->
+      <div id="formSuccessToast" class="hidden absolute inset-0 bg-white p-8 flex flex-col items-center justify-center text-center space-y-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+          <i data-lucide="check" class="w-8 h-8"></i>
+        </div>
+        <h4 class="font-serif text-2xl font-bold text-stone-900">Showroom Visit Confirmed</h4>
+        <p class="text-stone-600 text-sm max-w-sm">
+          Thank you. Our studio concierge will contact you within 2 hours to confirm your private meeting time with our Master Joiner.
+        </p>
+        <button onclick="closeBookingModal()" class="px-6 py-2.5 bg-stone-900 text-white rounded-xl text-sm font-medium">Close Window</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    lucide.createIcons();
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    document.querySelectorAll('.mobile-link').forEach(l => {
+      l.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Anatomy Hotspot Explorer
+    const anatomyData = {
+      dovetail: {
+        number: "Feature 01 of 04",
+        title: "English Dovetail Solid Maple Boxes",
+        desc: "5/8\" solid North American sugar maple drawer boxes joined with hand-fitted English dovetails. Finished with furniture-grade catalyzed clear coat that never splinters or catches linens.",
+        spec: "Lifetime Structural Joint Guarantee"
+      },
+      runners: {
+        number: "Feature 02 of 04",
+        title: "Blum® Movento Concealed Soft-Close",
+        desc: "Precision undermount runners rated for 100-pound loads with 4-dimensional alignment adjustments. Silent synchronized motion that never sags over decades of daily use.",
+        spec: "Tested to 100,000+ Cycles (Commercial Grade)"
+      },
+      frames: {
+        number: "Feature 03 of 04",
+        title: "Blind Mortise & Tenon Face Frames",
+        desc: "100% solid hardwood 1\" thick face frames joined using industrial blind mortise-and-tenon joints. Resists room humidity fluctuations without warping or cracking.",
+        spec: "Zero Particle Board or Staples Used"
+      },
+      lighting: {
+        number: "Feature 04 of 04",
+        title: "Integrated Warm 2700K LED Reveal Channels",
+        desc: "Concealed aluminum extrusion channels with frosted diffusers routed directly into top and bottom rails for ambient shadowless task lighting.",
+        spec: "Discreet Low-Voltage Wiring Pre-Channeled"
+      }
+    };
+
+    function showAnatomy(key, dotBtn) {
+      const data = anatomyData[key];
+      if (!data) return;
+
+      document.getElementById('anatomyNumber').textContent = data.number;
+      document.getElementById('anatomyTitle').textContent = data.title;
+      document.getElementById('anatomyDesc').textContent = data.desc;
+      document.getElementById('anatomySpec').innerHTML = `<i data-lucide="check" class="w-4 h-4"></i> ${data.spec}`;
+
+      document.querySelectorAll('.anatomy-dot').forEach(d => {
+        d.classList.remove('bg-brass-500', 'ring-brass-400/30');
+        d.classList.add('bg-white', 'ring-white/30');
+      });
+
+      if (dotBtn) {
+        dotBtn.classList.remove('bg-white', 'ring-white/30');
+        dotBtn.classList.add('bg-brass-500', 'ring-brass-400/30');
+      }
+
+      lucide.createIcons();
+    }
+
+    // Configurator Logic
+    let currentFootage = 28;
+    let currentRoomRate = 1400;
+    let currentWoodMultiplier = 1.0;
+
+    function setRoomType(type, rate, btn) {
+      currentRoomRate = rate;
+      document.querySelectorAll('.room-btn').forEach(b => {
+        b.classList.remove('border-2', 'border-stone-950', 'bg-stone-100', 'text-stone-950');
+        b.classList.add('border', 'border-stone-200', 'bg-white', 'text-stone-700');
+      });
+      btn.classList.add('border-2', 'border-stone-950', 'bg-stone-100', 'text-stone-950');
+      btn.classList.remove('border-stone-200', 'bg-white', 'text-stone-700');
+      calculateCabinetCost();
+    }
+
+    function updateFootage(val) {
+      currentFootage = parseInt(val);
+      document.getElementById('footageDisplay').textContent = `${currentFootage} Linear Feet`;
+      calculateCabinetCost();
+    }
+
+    function updateWood(mult, name) {
+      currentWoodMultiplier = parseFloat(mult);
+      calculateCabinetCost();
+    }
+
+    function calculateCabinetCost() {
+      const base = currentFootage * currentRoomRate * currentWoodMultiplier;
+      const low = Math.round((base * 0.95) / 100) * 100;
+      const high = Math.round((base * 1.15) / 100) * 100;
+
+      document.getElementById('configPriceDisplay').textContent = `$${low.toLocaleString()} – $${high.toLocaleString()}`;
+    }
+
+    // FAQ Accordion
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('i');
+      const isOpen = !content.classList.contains('hidden');
+
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-item i').forEach(i => i.style.transform = 'rotate(0deg)');
+
+      if (!isOpen) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Modal
+    const bookingModal = document.getElementById('bookingModal');
+    function openBookingModal() {
+      bookingModal.classList.remove('hidden');
+      bookingModal.classList.add('flex');
+    }
+    function closeBookingModal() {
+      bookingModal.classList.add('hidden');
+      bookingModal.classList.remove('flex');
+      document.getElementById('formSuccessToast').classList.add('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccessToast').classList.remove('hidden');
+      setTimeout(() => lucide.createIcons(), 50);
+    }
+  </script>
+</body>
+</html>
